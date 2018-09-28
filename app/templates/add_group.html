@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Register</h1>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.group_name.label }}<br>
+            {{ form.group_name(size=32) }}<br>
+            {% for error in form.group_name.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.group_email.label }}<br>
+            {{ form.group_email(size=32) }}<br>
+            {% for error in form.group_email.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.group_password.label }}<br>
+            {{ form.group_password(size=32) }}<br>
+            {% for error in form.group_password.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.group_is_admin.label }}<br>
+            {{ form.group_is_admin() }}<br>
+            {% for error in form.group_is_admin.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}

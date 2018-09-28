@@ -1,0 +1,2 @@
+FLASK_APP=pwManager.py
+FLASK_ENV=development
